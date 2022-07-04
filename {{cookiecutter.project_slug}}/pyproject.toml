@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "ncg-faucet-rest-api"
+version = "0.1.0"
+description = "Main"
+authors = ["Planetarium <engineering@planetariumhq.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.10"
+
+fastapi = "~=0.78.0"
+uvicorn = "~=0.17.6"
+
+python-dotenv = "~=0.17"
+
+mypy = { version = "*", optional = true }
+
+pytest = { version = "*", optional = true }
+pytest-mock = { version = "*", optional = true }
+
+[tool.poetry.extras]
+mypy = ["mypy"]
+pytest = [
+    "pytest",
+    "pytest-mock",
+]
+
+[tool.poetry.dev-dependencies]
+# Lint
+flake8 = "*"
+mypy = "*"
+
+# Fomat
+black = "*"
+
+# Debug
+watchdog = "*"
+# Logging
+colorama = "*"
+structlog = {extras = ["dev"],version = "*"}
+
+[build-system]
+requires = ["setuptools", "poetry>=1.0"]
+build-backend = "poetry.masonry.api"

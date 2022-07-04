@@ -1,0 +1,2 @@
+# Atralupus's FastAPI Template
+
