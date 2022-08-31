@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from rest_api.api import routers
-from rest_api.config import EnvironmentEnum, config
+from rest_api.config import config
 from rest_api.types import StrDict
 
 logger = structlog.get_logger(__name__)
@@ -12,7 +12,7 @@ logger = structlog.get_logger(__name__)
 def configure_cors(app: FastAPI):
     cors_origin = config.CORS_ORIGIN
 
-    if config.ENV == EnvironmentEnum.PRODUCTION and cors_origin == "*":
+    if config.ENV == "production" and cors_origin == "*":
         logger.warn("Pls change `CORE_ORIGIN` for production setting")
 
     app.add_middleware(
