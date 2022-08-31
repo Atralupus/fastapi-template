@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "ncg-faucet-rest-api"
+name = "{{cookiecutter.project_name}}"
 version = "0.1.0"
-description = "Main"
-authors = ["Planetarium <engineering@planetariumhq.com>"]
+description = "FIXME!"
+authors = ["FIXME!"]
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.10"

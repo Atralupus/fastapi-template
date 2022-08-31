@@ -1,4 +1,4 @@
-# Rest API
+# {{cookiecutter.project_name}}
 
 ## Setup
 Use Python 3.8~ (recommend 3.9.10)

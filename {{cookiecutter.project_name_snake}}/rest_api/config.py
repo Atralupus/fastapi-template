@@ -2,19 +2,14 @@ import typing
 
 import pydantic
 from pydantic import BaseSettings, Field
-from rest_api.types import StrEnum
 
 
-class EnvironmentEnum(StrEnum):
-    LOCAL = "LOCAL"
-    TEST = "TEST"
-    DEVELOPMENT = "DEVELOPMENT"
-    PRODUCTION = "PRODUCTION"
+Environment = typing.Literal["local", "test", "development", "production"]
 
 
 class Settings(BaseSettings):
     #: Environment
-    ENV: EnvironmentEnum = EnvironmentEnum.LOCAL
+    ENV: Environment = "local"
 
     #: Server Domain
     SERVER_NAME: typing.Optional[str] = "localhost"
@@ -28,7 +23,7 @@ class Settings(BaseSettings):
     def default_docs_ui_allow(cls, v, *, values):
         if v:
             return v
-        elif values["ENV"] in {EnvironmentEnum.LOCAL, EnvironmentEnum.TEST}:
+        elif values["ENV"] in {"local", "test"}:
             return True
         else:
             return False

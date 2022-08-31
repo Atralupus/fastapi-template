@@ -1,0 +1,10 @@
+{
+    "folders": [
+        {
+            "path": "../"
+        },
+        {
+            "path": "../{{cookiecutter.project_slug}}"
+        }
+    ]
+}
